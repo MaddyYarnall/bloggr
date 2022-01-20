@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <Project v-for="p in project" :key="p.id" :project="p" />
+    <Project v-for="p in projects" :key="p.id" :project="p" />
   </div>
 </template>
 
@@ -32,22 +32,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.home {
-  display: grid;
-  height: 80vh;
-  place-content: center;
-  text-align: center;
-  user-select: none;
-  .home-card {
-    width: 50vw;
-    > img {
-      height: 200px;
-      max-width: 200px;
-      width: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-  }
-}
 </style>
 
