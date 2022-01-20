@@ -78,7 +78,7 @@ export default {
   background-size: cover;
   object-fit: contain;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 50vh;
   width: 100%;
   margin: 0;
 }

@@ -10,7 +10,7 @@
 
 
 <script>
-import { computed, watch, watchEffect } from '@vue/runtime-core';
+import { computed, watchEffect } from '@vue/runtime-core';
 import { useRoute } from 'vue-router'
 import { profilesService } from '../services/ProfilesService.js'
 import { projectsService } from '../services/ProjectsService.js';
@@ -22,14 +22,14 @@ export default {
     watchEffect(async () => {
       if (route.name == "Profile") {
         await profilesService.getProfile(route.params.id);
-        await projectsService.getProjects("?creatorId =" + route.params.id);
+        await projectsService.getProjects("?creatorId=" + route.params.id);
       }
     });
     return {
       account: computed(() => AppState.account),
       projects: computed(() => AppState.projects),
       profile: computed(() => AppState.profile),
-      coverImg: computed(() => `url(${AppState.profile.coverImg})`),
+      coverImg: computed(() => `url(${AppState.profile.imgUrl})`),
     };
   },
 };
